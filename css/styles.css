@@ -1,0 +1,346 @@
+/* ===================================
+   Root Variables
+=================================== */
+:root {
+  --gold: #FFD700;
+}
+
+/* ===================================
+   Global Styles
+=================================== */
+body {
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  margin-top: 80px; /* Space for fixed navbar */
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+.section {
+  padding: 60px 0;
+  margin-bottom: 60px; /* Prevents overlap with footer */
+}
+
+/* ===================================
+   Navbar
+=================================== */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--gold) !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--gold) !important;
+  background-color: transparent !important;
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background-color: var(--gold);
+}
+
+/* ===================================
+   Carousel
+=================================== */
+#heroCarousel .carousel-inner,
+.carousel-item img {
+  height: 100vh;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.carousel-text-overlay {
+  width: 100%;
+  padding: 0 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 3;
+}
+
+/* ===================================
+   Red Overlay Section
+=================================== */
+.red-overlay {
+  background: 
+    linear-gradient(rgba(249, 193, 8, 0.85), rgba(212, 175, 55, 0.85)),
+    url("../assets/images/Mylogo.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* ===================================
+   Services Section
+=================================== */
+.filter-btn {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--gold);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: black;
+  color: var(--gold);
+}
+
+.services-item {
+  display: none;
+}
+
+.services-item.show {
+  display: block;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#services-gallery {
+  min-height: 300px;
+}
+
+.view-more-doors {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  color: var(--gold);
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0 0 8px 8px;
+  transition: all 0.3s ease;
+}
+
+.view-more-doors:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+/* ===================================
+   About Section
+=================================== */
+#about img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+#about p {
+  line-height: 1.7;
+}
+
+#about .text-warning {
+  font-weight: 600;
+}
+
+/* ===================================
+   Contact Section
+=================================== */
+#contact .form-control:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+#contact button:hover {
+  background-color: #e6b800 !important;
+}
+
+#contact .hover-gold:hover {
+  color: var(--gold) !important;
+}
+
+#contact a {
+  transition: color 0.3s ease;
+}
+
+#contact i {
+  font-size: 1.1rem;
+}
+.form-label{
+  color: #000;
+}
+
+/* ===================================
+   Cards and Images
+=================================== */
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body img {
+  object-fit: cover;
+  border: 2px solid #f7eb01;
+}
+
+#form-alert {
+  border-left: 5px solid var(--gold);
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: #fefae0;
+  color: #333;
+  font-weight: 500;
+}
+
+
+/* ===================================
+   Misc Utilities
+=================================== */
+.bg-gold {
+  background-color: var(--gold) !important;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.text-warning {
+  font-size: 1.2rem;
+}
+
+.hover-gold:hover {
+  color: var(--gold) !important;
+}
+
+.contact-box a,
+p a {
+  transition: color 0.3s ease;
+}
+
+.contact-box i {
+  font-size: 1.1rem;
+}
+
+ul li:hover {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.img-container {
+  background-color: var(--gold);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* ========== Contact Info Box ========== */
+.contact-info-box p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.contact-info-box i {
+  font-size: 1.25rem;
+  width: 20px; /* uniform width for icons */
+  text-align: center;
+}
+
+.contact-info-box a {
+  transition: color 0.3s ease;
+}
+
+.contact-info-box a:hover {
+  color: var(--gold) !important;
+}
+
+
+/* ===================================
+   Footer
+=================================== */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ===================================
+   Responsive Media Queries
+=================================== */
+@media (max-width: 768px) {
+  .red-overlay {
+    height: auto;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  #heroCarousel .carousel-inner,
+  .carousel-item img {
+    height: 50vh;
+  }
+
+  .carousel-text-overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  #contact {
+    text-align: center;
+  }
+
+  #contact .form-label,
+  #contact input,
+  #contact textarea {
+    text-align: left;
+  }
+}
